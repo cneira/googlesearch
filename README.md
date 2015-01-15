@@ -1,7 +1,5 @@
-##Lighttable-plugins
-Lighttable plugins and utils that I have created
-
 #googlesearch :
+
 This plugin let's you search using several websites:
 amazon,github,lightable-groups,google,grooveshark.
 Also let's you google words or text selected in the editor.
