@@ -1,6 +1,0 @@
-{:name "google-search"
- :version "0.0.1"
- :author "cnb"
- :source ""
- :desc "makes available google, github,amazon and grooveshark web search "
- :behaviors "googlesearch.behaviors"}

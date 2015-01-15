@@ -1,4 +1,0 @@
-[
- [:app :lt.objs.plugins/load-js "google-search_compiled.js"]
-
- ]
