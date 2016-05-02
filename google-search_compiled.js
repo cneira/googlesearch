@@ -83,16 +83,16 @@ lt.plugins.googlesearch.google_word = (function google_word(engine){var cm = lt.
 }
 });
 lt.plugins.googlesearch.gsearch = (function gsearch(query,engine){if(cljs.core._EQ_.call(null,engine,"google"))
-{var url_6379 = [cljs.core.str("https://www.google.cl/?gws_rd=ssl#q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6379);
+{var url_6391 = [cljs.core.str("https://www.google.cl/?gws_rd=ssl#q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6391);
 } else
 {if(cljs.core._EQ_.call(null,engine,"github"))
-{var url_6380 = [cljs.core.str("https://github.com/search?utf8=%E2%9C%93&q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6380);
+{var url_6392 = [cljs.core.str("https://github.com/search?utf8=%E2%9C%93&q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6392);
 } else
 {if(cljs.core._EQ_.call(null,engine,"amazon"))
-{var url_6381 = [cljs.core.str("http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6381);
+{var url_6393 = [cljs.core.str("http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6393);
 } else
 {if(cljs.core._EQ_.call(null,engine,"ligthtable-googlegroup"))
-{var url_6382 = [cljs.core.str("https://groups.google.com/forum/#!searchin/light-table-discussion/"),cljs.core.str(clojure.string.join.call(null,"%20",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6382);
+{var url_6394 = [cljs.core.str("https://groups.google.com/forum/#!searchin/light-table-discussion/"),cljs.core.str(clojure.string.join.call(null,"%20",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6394);
 } else
 {}
 }
