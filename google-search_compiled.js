@@ -23,7 +23,7 @@ goog.require('lt.objs.tabs');
 goog.require('lt.objs.editor');
 goog.require('lt.objs.editor.pool');
 goog.require('lt.objs.command');
-lt.plugins.googlesearch.query_input = lt.objs.sidebar.command.options_input.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"placeholder","placeholder",1612151013),"type your search"], null));
+lt.plugins.googlesearch.query_input = lt.objs.sidebar.command.options_input.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"placeholder","placeholder",1612151013),"search for "], null));
 lt.plugins.googlesearch.__BEH__exec_active_BANG_ = (function __BEH__exec_active_BANG_(this$,query){return lt.objs.sidebar.command.exec_active_BANG_.call(null,query);
 });
 lt.object.behavior_STAR_.call(null,new cljs.core.Keyword("lt.plugins.googlesearch","exec-active!","lt.plugins.googlesearch/exec-active!",4612930673),new cljs.core.Keyword(null,"reaction","reaction",4441361819),lt.plugins.googlesearch.__BEH__exec_active_BANG_,new cljs.core.Keyword(null,"triggers","triggers",2516997421),new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"select","select",4402849902),null], null), null));
@@ -46,14 +46,14 @@ lt.objs.command.command.call(null,new cljs.core.PersistentArrayMap(null, 4, [new
 {return null;
 }
 })], null));
-lt.objs.command.command.call(null,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"command","command",1964298941),new cljs.core.Keyword("lt.plugins.googlesearch","grooveshark-search","lt.plugins.googlesearch/grooveshark-search",1737114438),new cljs.core.Keyword(null,"desc","desc",1016984067),"grooveshark-search: search on grooveshark",new cljs.core.Keyword(null,"options","options",4059396624),lt.plugins.googlesearch.query_input,new cljs.core.Keyword(null,"exec","exec",1017031683),(function (query){if(!(cljs.core.empty_QMARK_.call(null,query)))
-{return lt.plugins.googlesearch.gsearch.call(null,query,"grooveshark");
+lt.objs.command.command.call(null,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"command","command",1964298941),new cljs.core.Keyword("lt.plugins.googlesearch","googlegroup-lighttable-search","lt.plugins.googlesearch/googlegroup-lighttable-search",1843567178),new cljs.core.Keyword(null,"desc","desc",1016984067),"googlegroup-lighttable: search on discussion group",new cljs.core.Keyword(null,"options","options",4059396624),lt.plugins.googlesearch.query_input,new cljs.core.Keyword(null,"exec","exec",1017031683),(function (query){if(!(cljs.core.empty_QMARK_.call(null,query)))
+{return lt.plugins.googlesearch.gsearch.call(null,query,"ligthtable-googlegroup");
 } else
 {return null;
 }
 })], null));
-lt.objs.command.command.call(null,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"command","command",1964298941),new cljs.core.Keyword("lt.plugins.googlesearch","googlegroup-lighttable-search","lt.plugins.googlesearch/googlegroup-lighttable-search",1843567178),new cljs.core.Keyword(null,"desc","desc",1016984067),"googlegroup-lighttable: search on discussion group",new cljs.core.Keyword(null,"options","options",4059396624),lt.plugins.googlesearch.query_input,new cljs.core.Keyword(null,"exec","exec",1017031683),(function (query){if(!(cljs.core.empty_QMARK_.call(null,query)))
-{return lt.plugins.googlesearch.gsearch.call(null,query,"ligthtable-googlegroup");
+lt.objs.command.command.call(null,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"command","command",1964298941),new cljs.core.Keyword("lt.plugins.googlesearch","stackoverflow-search","lt.plugins.googlesearch/stackoverflow-search",1119613573),new cljs.core.Keyword(null,"desc","desc",1016984067),"search on stackoverflow",new cljs.core.Keyword(null,"options","options",4059396624),lt.plugins.googlesearch.query_input,new cljs.core.Keyword(null,"exec","exec",1017031683),(function (query){if(!(cljs.core.empty_QMARK_.call(null,query)))
+{return lt.plugins.googlesearch.gsearch.call(null,query,"stackoverflow");
 } else
 {return null;
 }
@@ -83,26 +83,23 @@ lt.plugins.googlesearch.google_word = (function google_word(engine){var cm = lt.
 }
 });
 lt.plugins.googlesearch.gsearch = (function gsearch(query,engine){if(cljs.core._EQ_.call(null,engine,"google"))
-{var url = [cljs.core.str("https://www.google.cl/?gws_rd=ssl#q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');return lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url);
+{var url_6379 = [cljs.core.str("https://www.google.cl/?gws_rd=ssl#q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6379);
 } else
 {if(cljs.core._EQ_.call(null,engine,"github"))
-{var url = [cljs.core.str("https://github.com/search?utf8=%E2%9C%93&q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');return lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url);
+{var url_6380 = [cljs.core.str("https://github.com/search?utf8=%E2%9C%93&q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6380);
 } else
 {if(cljs.core._EQ_.call(null,engine,"amazon"))
-{var url = [cljs.core.str("http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');return lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url);
-} else
-{if(cljs.core._EQ_.call(null,engine,"grooveshark"))
-{var url = [cljs.core.str("http://grooveshark.com/#!/search?q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');return lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url);
+{var url_6381 = [cljs.core.str("http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6381);
 } else
 {if(cljs.core._EQ_.call(null,engine,"ligthtable-googlegroup"))
-{var url = [cljs.core.str("https://groups.google.com/forum/#!searchin/light-table-discussion/"),cljs.core.str(clojure.string.join.call(null,"%20",clojure.string.split.call(null,query,/\s/)))].join('');return lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url);
+{var url_6382 = [cljs.core.str("https://groups.google.com/forum/#!searchin/light-table-discussion/"),cljs.core.str(clojure.string.join.call(null,"%20",clojure.string.split.call(null,query,/\s/)))].join('');lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url_6382);
 } else
-{return null;
+{}
 }
 }
 }
-}
-}
+cljs.core._EQ_.call(null,engine,"stackoverflow");
+var url = [cljs.core.str("http://stackoverflow.com/search?q="),cljs.core.str(clojure.string.join.call(null,"+",clojure.string.split.call(null,query,/\s/)))].join('');return lt.objs.command.exec_BANG_.call(null,new cljs.core.Keyword(null,"add-browser-tab","add-browser-tab",3663273910),url);
 });
 }
 

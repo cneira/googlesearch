@@ -16,7 +16,7 @@
 
 
 (def query-input
-  (sidebar/options-input {:placeholder "type your search"}))
+  (sidebar/options-input {:placeholder "search for "}))
 
 
 (behavior ::exec-active!
@@ -54,23 +54,21 @@
                         (gsearch query  "amazon")))})
 
 
-
-
-(cmd/command {:command ::grooveshark-search
-              :desc "grooveshark-search: search on grooveshark"
-              :options query-input
-              :exec (fn [query]
-                      (when (not (empty? query))
-                        (gsearch query  "grooveshark")))})
-
-
-
 (cmd/command {:command ::googlegroup-lighttable-search
               :desc "googlegroup-lighttable: search on discussion group"
               :options query-input
               :exec (fn [query]
                       (when (not (empty? query))
                         (gsearch query  "ligthtable-googlegroup")))})
+
+
+(cmd/command {:command ::stackoverflow-search
+              :desc "search on stackoverflow"
+              :options query-input
+              :exec (fn [query]
+                      (when (not (empty? query))
+                        (gsearch query  "stackoverflow")))})
+
 
 
 
@@ -119,23 +117,16 @@
     (= engine "google")
       (let [url  (str "https://www.google.cl/?gws_rd=ssl#q=" (string/join  "+"  (string/split query  #"\s")) ) ]
         (cmd/exec! :add-browser-tab url))
-
     (= engine "github")
       (let [url  (str "https://github.com/search?utf8=%E2%9C%93&q=" (string/join  "+"  (string/split query  #"\s")) ) ]
         (cmd/exec! :add-browser-tab url))
-
     (= engine "amazon")
       (let [url  (str "http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=" (string/join  "+"  (string/split query  #"\s")) ) ]
         (cmd/exec! :add-browser-tab url))
-
-    (= engine "grooveshark")
-      (let [url  (str "http://grooveshark.com/#!/search?q=" (string/join  "+"  (string/split query  #"\s")) ) ]
-        (cmd/exec! :add-browser-tab url))
-
     (= engine "ligthtable-googlegroup")
       (let [url  (str "https://groups.google.com/forum/#!searchin/light-table-discussion/" (string/join  "%20"  (string/split query  #"\s")) ) ]
-        (cmd/exec! :add-browser-tab url))
-
-
-    ))
+        (cmd/exec! :add-browser-tab url)))
+  (= engine "stackoverflow")
+      (let [url  (str "http://stackoverflow.com/search?q=" (string/join  "+"  (string/split query  #"\s")) ) ]
+        (cmd/exec! :add-browser-tab url)))
 

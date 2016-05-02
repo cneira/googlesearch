@@ -9,6 +9,5 @@ This plugin provides the following commands :<br><br>
 2. amazon-search <br>
 3. github-search <br>
 4. google-search  <br>
-5. googlegroup-lighttable-search <br>
-6. grooveshark-search <br>
-7. goto-url : enter a url and go to that address <br>
+5. stackoverflow-search <br>
+5. goto-url : enter a url and go to that address <br>
