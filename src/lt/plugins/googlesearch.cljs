@@ -99,6 +99,11 @@
               :exec (fn []
                       (google-word "github"))})
 
+(cmd/command {:command ::search-stackoverflow-word-under-cursor
+              :desc "search in stackoverflow the selected text"
+              :exec (fn []
+                      (google-word "stackoverflow"))})
+
 
 (defn goto-url  [query]
   (cmd/exec! :add-browser-tab query))
@@ -125,8 +130,7 @@
         (cmd/exec! :add-browser-tab url))
     (= engine "ligthtable-googlegroup")
       (let [url  (str "https://groups.google.com/forum/#!searchin/light-table-discussion/" (string/join  "%20"  (string/split query  #"\s")) ) ]
-        (cmd/exec! :add-browser-tab url)))
-  (= engine "stackoverflow")
+        (cmd/exec! :add-browser-tab url))
+    (= engine "stackoverflow")
       (let [url  (str "http://stackoverflow.com/search?q=" (string/join  "+"  (string/split query  #"\s")) ) ]
-        (cmd/exec! :add-browser-tab url)))
-
+        (cmd/exec! :add-browser-tab url))))
